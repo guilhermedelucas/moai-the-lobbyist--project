@@ -1,4 +1,6 @@
 <script>
+	import { base } from '$app/paths';
+
   let isOpen = false;
   export let currentPage = '';
   function toggleMenu() {
@@ -18,10 +20,10 @@
 
     <!-- Desktop Menu -->
     <div class="hidden lg:flex space-x-6 items-center">
-      <a href="/" class="{currentPage === 'home' ? 'font-bold' : ''} hover:underline">Home</a>
-      <a href="/about" class="{currentPage === 'about' ? 'font-bold' : ''} hover:underline">About Us</a>
-      <a href="/services" class="{currentPage === 'services' ? 'font-bold' : ''} hover:underline">Services</a>
-      <a href="/contact" class="{currentPage === 'contact' ? 'font-bold' : ''} hover:underline bg-teal-700 text-white p-2 px-4 rounded">Contact</a>
+      <a href="{base}/" class="{currentPage === 'home' ? 'font-bold' : ''} hover:underline">Home</a>
+      <a href="{base}/about" class="{currentPage === 'about' ? 'font-bold' : ''} hover:underline">About Us</a>
+      <a href="{base}/services" class="{currentPage === 'services' ? 'font-bold' : ''} hover:underline">Services</a>
+      <a href="{base}/contact" class="{currentPage === 'contact' ? 'font-bold' : ''} hover:underline bg-teal-700 text-white p-2 px-4 rounded">Contact</a>
     </div>
 
     <!-- Burger Menu Icon -->
@@ -42,10 +44,10 @@
       </button>
     </div>
     <ul class="flex flex-col items-center space-y-6 mt-12">
-      <li><a href="/" on:click={closeMenu} class="text-white text-xl {currentPage === 'home' ? 'font-bold' : ''} hover:underline">Home</a></li>
-      <li><a href="/about" on:click={closeMenu} class="text-white text-xl {currentPage === 'about' ? 'font-bold' : ''} hover:underline">About Us</a></li>
-      <li><a href="/services" on:click={closeMenu} class="text-white text-xl {currentPage === 'services' ? 'font-bold' : ''} hover:underline">Services</a></li>
-      <li><a href="/contact" on:click={closeMenu} class="text-white text-xl {currentPage === 'contact' ? 'font-bold' : ''} hover:underline">Contact</a></li>
+      <li><a href="{base}/" on:click={closeMenu} class="text-white text-xl {currentPage === 'home' ? 'font-bold' : ''} hover:underline">Home</a></li>
+      <li><a href="{base}/about" on:click={closeMenu} class="text-white text-xl {currentPage === 'about' ? 'font-bold' : ''} hover:underline">About Us</a></li>
+      <li><a href="{base}/services" on:click={closeMenu} class="text-white text-xl {currentPage === 'services' ? 'font-bold' : ''} hover:underline">Services</a></li>
+      <li><a href="{base}/contact" on:click={closeMenu} class="text-white text-xl {currentPage === 'contact' ? 'font-bold' : ''} hover:underline">Contact</a></li>
     </ul>
   </div>
 </nav>
