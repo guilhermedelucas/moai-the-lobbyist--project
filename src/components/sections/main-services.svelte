@@ -1,28 +1,30 @@
 <script>
+	import { base } from '$app/paths';
+
   // Define an array of services
   const services = [
     {
-      imgSrc: 'indicator-svgrepo-com.svg',
+      imgSrc: `${base}/indicator-svgrepo-com.svg`,
       title: 'Regulatory Compliance',
       description: 'Ensure your business meets all regulatory requirements with our comprehensive compliance services.'
     },
     {
-      imgSrc: 'order-svgrepo-com.svg',
+      imgSrc: `${base}/order-svgrepo-com.svg`,
       title: 'Legal Consultation',
       description: 'Get expert advice on legal matters to make informed decisions and protect your interests.'
     },
     {
-      imgSrc: 'office-svgrepo-com.svg',
+      imgSrc: `${base}/office-svgrepo-com.svg`,
       title: 'Contract Review',
       description: 'Review and manage contracts effectively to avoid potential legal issues and ensure compliance.'
     },
     {
-      imgSrc: 'database-svgrepo-com.svg',
+      imgSrc: `${base}/database-svgrepo-com.svg`,
       title: 'Risk Management',
       description: 'Identify and mitigate risks to protect your business from potential legal and financial issues.'
     },
     {
-      imgSrc: 'figure-svgrepo-com.svg',
+      imgSrc: `${base}/figure-svgrepo-com.svg`,
       title: 'Litigation Support',
       description: 'Receive professional support throughout the litigation process to navigate complex legal challenges.'
     }

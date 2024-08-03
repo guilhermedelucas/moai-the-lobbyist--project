@@ -1,15 +1,14 @@
 <script>
 	import '../app.css'
 	import { page } from '$app/stores';
-import { onMount } from 'svelte';
+	import { base } from '$app/paths';
 	import Nav from '../components/nav.svelte';
 	import Footer from '../components/footer.svelte';
     import Banner from '../components/banner.svelte';
 
-
   let currentPage = 'home';
   let bannerTitle = 'Welcome to Law Consulting';
-  let bannerImgSrc = '/path/to/your/default-image.jpg';
+  let bannerImgSrc = `${base}/business.jpg`;
 
   $: {
     const path = $page.url.pathname;
@@ -17,19 +16,19 @@ import { onMount } from 'svelte';
     if (path === '/') {
       currentPage = 'home';
       bannerTitle = 'Welcome to Law Consulting';
-      bannerImgSrc = '/business.jpg';
+      bannerImgSrc = `${base}/business.jpg`;
     } else if (path.startsWith('/about')) {
       currentPage = 'about';
       bannerTitle = 'About Us';
-      bannerImgSrc = '/business.jpg';
+      bannerImgSrc = `${base}/business.jpg`;
     } else if (path.startsWith('/services')) {
       currentPage = 'services';
       bannerTitle = 'Our Services';
-      bannerImgSrc = '/business.jpg';
+      bannerImgSrc = `${base}/business.jpg`;
     } else if (path.startsWith('/contact')) {
       currentPage = 'contact';
       bannerTitle = 'Contact Us';
-      bannerImgSrc = '/business.jpg';
+      bannerImgSrc = `${base}/business.jpg`;
     }
   }
 </script>
