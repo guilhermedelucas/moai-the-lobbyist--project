@@ -2,7 +2,7 @@
 	import { base } from '$app/paths';
 </script>
 
-<section class="bg-gray-800 text-white mt-16 p-4">
+<footer class="bg-gray-800 text-white mt-16 p-4">
   <div class="container mx-auto text-center">
     <p class="mb-4">&copy; 2024 Law Consulting. All rights reserved.</p>
     <ul class="flex justify-center space-x-4">
@@ -20,4 +20,4 @@
       </li>
     </ul>
   </div>
-</section>
+</footer>
