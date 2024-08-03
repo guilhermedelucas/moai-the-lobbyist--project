@@ -38,6 +38,18 @@
 	}
 </script>
 
+<svelte:head>
+	<title>Law Consulting Services - Regulatory Compliance, Legal Consultation</title>
+	<meta
+		name="description"
+		content="Moai Expert law consulting services including regulatory compliance, legal consultation, contract review, risk management, and litigation support."
+	/>
+	<meta
+		name="keywords"
+		content="law consulting, regulatory compliance, legal consultation, contract review, risk management, litigation support"
+	/>
+</svelte:head>
+
 <div class="flex flex-col min-h-screen">
 	<Nav {currentPage} />
 	<Banner title={bannerTitle} imgSrc={bannerImgSrc} />
