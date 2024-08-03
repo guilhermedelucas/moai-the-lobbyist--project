@@ -13,19 +13,19 @@
   $: {
     const path = $page.url.pathname;
 
-    if (path === '/') {
+    if (path === `${base}/`) {
       currentPage = 'home';
       bannerTitle = 'Welcome to Law Consulting';
       bannerImgSrc = `${base}/business.jpg`;
-    } else if (path.startsWith('/about')) {
+    } else if (path.startsWith(`${base}/about`)) {
       currentPage = 'about';
       bannerTitle = 'About Us';
       bannerImgSrc = `${base}/business.jpg`;
-    } else if (path.startsWith('/services')) {
+    } else if (path.startsWith(`${base}/services`)) {
       currentPage = 'services';
       bannerTitle = 'Our Services';
       bannerImgSrc = `${base}/business.jpg`;
-    } else if (path.startsWith('/contact')) {
+    } else if (path.startsWith(`${base}/contact`)) {
       currentPage = 'contact';
       bannerTitle = 'Contact Us';
       bannerImgSrc = `${base}/business.jpg`;
