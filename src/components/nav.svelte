@@ -12,10 +12,14 @@
 	}
 </script>
 
-<nav class="absolute p-8 text-white w-full z-10">
-	<div class="container mx-auto flex justify-between items-start">
+<nav class="absolute p-8 py-12 text-white w-full z-10">
+	<div class="sm:container sm:mx-auto flex justify-between items-start">
 		<a href="{base}/" class="text-2xl font-bold">
-			<img src="{base}/moai-logo.png" alt="Law Consulting" style="height:96px;" />
+			<img
+				src="{base}/moai-white.png"
+				class="max-w-[220px] sm:max-w-[300px]"
+				alt="Law Consulting"
+			/>
 		</a>
 
 		<!-- Desktop Menu -->
