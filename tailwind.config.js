@@ -11,6 +11,9 @@ export default {
 				xl: '0',
 				'2xl': '0'
 			}
+		},
+		fontFamily: {
+			merriweather: ["'Merriweather'", 'serif']
 		}
 	},
 	plugins: []

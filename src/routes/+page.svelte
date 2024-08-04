@@ -14,7 +14,7 @@
 				<img src="{base}/088_main.jpg" alt="Paper work" class="rounded" />
 			</div>
 			<div class="md:w-1/2 md:pl-8 text-left flex flex-col justify-center">
-				<h1 class="text-4xl mb-4">Regulatory compliance</h1>
+				<h1 class="font-bold text-4xl mb-4">Regulatory compliance</h1>
 				<p class="text-gray-700">
 					Navigating the complex world of regulatory compliance can be challenging. With extensive
 					experience in handling regulatory paperwork, I have collaborated with numerous companies

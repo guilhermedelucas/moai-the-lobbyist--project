@@ -46,7 +46,7 @@
 	/>
 </svelte:head>
 
-<div class="flex flex-col min-h-screen text-gray-800">
+<div class="flex flex-col min-h-screen font-merriweather text-gray-800">
 	<Nav {currentPage} />
 	<Banner title={bannerTitle} imgSrc={bannerImgSrc} />
 
