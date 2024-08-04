@@ -1,6 +1,10 @@
 <script>
 	import { base } from '$app/paths';
 	import MainServices from '../components/sections/main-services.svelte';
+	import { useReveal } from '../lib/reveal';
+
+	// Call the custom hook to handle reveal functionality
+	useReveal();
 </script>
 
 <section class="container mx-auto flex items-center min-h-[50vh]">

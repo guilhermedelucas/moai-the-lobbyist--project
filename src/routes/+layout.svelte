@@ -7,43 +7,6 @@
 	import Footer from '../components/footer.svelte';
 	import Banner from '../components/banner.svelte';
 
-	function reveal() {
-		const reveals = document.querySelectorAll('.reveal');
-		reveals.forEach((node) => {
-			const revealTop = node.getBoundingClientRect().top;
-			const windowHeight = window.innerHeight;
-			const revealPoint = 150;
-
-			if (revealTop < windowHeight - revealPoint) {
-				node.classList.add('active-reveal');
-			}
-		});
-	}
-
-	onMount(() => {
-		document.documentElement.lang = 'pt-br';
-		const revealElements = document.querySelectorAll('.reveal');
-
-		// Create the IntersectionObserver
-		const observer = new IntersectionObserver(
-			(entries, observer) => {
-				entries.forEach((entry) => {
-					if (entry.isIntersecting) {
-						entry.target.classList.add('active-reveal');
-						observer.unobserve(entry.target); // Stop observing once revealed
-					}
-				});
-			},
-			{ threshold: 0.1 }
-		);
-
-		// Attach the observer to each element
-		revealElements.forEach((el) => observer.observe(el));
-
-		// Call reveal once on mount to reveal elements already in the viewport
-		reveal();
-	});
-
 	let currentPage = 'home';
 	let bannerTitle = 'Welcome to Law Consulting';
 	let bannerImgSrc = `${base}/business.jpg`;
