@@ -16,7 +16,7 @@
 	<div class="sm:container sm:mx-auto flex justify-between items-start">
 		<a href="{base}/" class="text-2xl font-bold">
 			<img
-				src="{base}/moai-white.png"
+				src="{base}/exreg-white-logo.png"
 				class="max-w-[220px] sm:max-w-[300px]"
 				alt="Law Consulting"
 			/>
@@ -24,15 +24,14 @@
 
 		<!-- Desktop Menu -->
 		<div class="hidden lg:flex space-x-6 items-center">
-			<a href="{base}/" class="{currentPage === 'home' ? 'font-bold' : ''} hover:underline">Home</a>
-			<a href="{base}/about" class="{currentPage === 'about' ? 'font-bold' : ''} hover:underline">
-				About Us
-			</a>
 			<a
 				href="{base}/services"
 				class="{currentPage === 'services' ? 'font-bold' : ''} hover:underline"
 			>
-				Services
+				Atuação
+			</a>
+			<a href="{base}/sobre" class="{currentPage === 'sobre' ? 'font-bold' : ''} hover:underline">
+				Sobre
 			</a>
 			<a
 				href="{base}/contact"
@@ -40,7 +39,7 @@
 					? 'font-bold'
 					: ''} hover:underline bg-teal-700 text-white p-2 px-4 rounded"
 			>
-				Contact
+				Contato
 			</a>
 		</div>
 
@@ -96,10 +95,10 @@
 			</li>
 			<li>
 				<a
-					href="{base}/about"
+					href="{base}/sobre"
 					on:click={closeMenu}
-					class="text-white text-xl {currentPage === 'about' ? 'font-bold' : ''} hover:underline"
-					>About Us</a
+					class="text-white text-xl {currentPage === 'sobre' ? 'font-bold' : ''} hover:underline"
+					>Sobre</a
 				>
 			</li>
 			<li>

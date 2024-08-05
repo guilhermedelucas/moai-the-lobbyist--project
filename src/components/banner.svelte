@@ -14,11 +14,13 @@
 		<h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold text-center">
 			{title}
 		</h1>
-		<p
-			class="text-white opacity-70 text-lg sm:text-xl md:text-2xl lg:text-3xl text-center hidden sm:block"
-		>
-			{description}
-		</p>
+		{#if description}
+			<p
+				class="text-white opacity-70 text-lg sm:text-xl md:text-2xl lg:text-3xl text-center hidden sm:block"
+			>
+				{description}
+			</p>
+		{/if}
 
 		{#if link && linkText}
 			<a

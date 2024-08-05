@@ -22,23 +22,26 @@
 			bannerTitle = 'Welcome to Law Consulting';
 			bannerImgSrc = `${base}/business.jpg`;
 			bannerDescription = 'Law Consulting is a law firm that offers legal services to its clients.';
-			bannerLink = `${base}/about`;
+			bannerLink = `${base}/sobre`;
 			bannerLinkText = 'Saiba mais...';
-		} else if (path.startsWith(`${base}/about`)) {
-			currentPage = 'about';
-			bannerTitle = 'About Us';
+		} else if (path.startsWith(`${base}/sobre`)) {
+			currentPage = 'sobre';
+			bannerTitle = 'Sobre a EXREG Consultoria';
 			bannerImgSrc = `${base}/business.jpg`;
 			bannerLink = null;
+			bannerDescription = 'Excelência em soluções customizadas e eficazes para o seu negócio';
 		} else if (path.startsWith(`${base}/services`)) {
 			currentPage = 'services';
 			bannerTitle = 'Our Services';
 			bannerImgSrc = `${base}/business.jpg`;
 			bannerLink = null;
+			bannerDescription = null;
 		} else if (path.startsWith(`${base}/contact`)) {
 			currentPage = 'contact';
 			bannerTitle = 'Contact Us';
 			bannerImgSrc = `${base}/business.jpg`;
 			bannerLink = null;
+			bannerDescription = null;
 		}
 	}
 </script>
@@ -65,7 +68,7 @@
 		link={bannerLink}
 	/>
 
-	<main class="flex-grow py-6 sm:py-8 md:py-12 lg:py-16">
+	<main class="flex-grow">
 		<slot />
 	</main>
 
