@@ -2,7 +2,7 @@
 	import { base } from '$app/paths';
 </script>
 
-<footer class="bg-gray-800 text-white mt-16 p-4">
+<footer class="bg-gray-800 text-white p-4">
 	<div class="container mx-auto text-center">
 		<p class="mb-4">
 			<span class="text-gray-300">exreg</span> <span class="text-lime-300">•</span> consultoria

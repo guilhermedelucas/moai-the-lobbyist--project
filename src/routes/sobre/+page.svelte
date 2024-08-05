@@ -1,5 +1,7 @@
 <script>
 	import { useReveal } from '../../lib/reveal';
+	import { base } from '$app/paths';
+
 	export let testimonials = [
 		{
 			name: 'Cliente Satisfeito',
@@ -232,7 +234,7 @@
 
 	<div class="container mx-auto px-6 text-center">
 		<a
-			href="/contato"
+			href="{base}/contact"
 			class="inline-block bg-teal-700 text-white text-lg font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-teal-900 transition-colors"
 			>Entre em Contato</a
 		>
