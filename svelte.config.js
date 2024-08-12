@@ -1,5 +1,8 @@
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
+import lang from './src/lib/translations/lang.js';
+
+const supportedLocales = Object.keys(lang);
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -10,6 +13,21 @@ const config = {
 		adapter: adapter(),
 		paths: {
 			base: process.env.NODE_ENV === 'production' ? '/moai-the-lobbyist--project' : ''
+		},
+		prerender: {
+			crawl: false,
+			entries: ['/'].concat(
+				supportedLocales.reduce(
+					(acc, locale) => [
+						...acc,
+						`/${locale}`,
+						`/${locale}/sobre`,
+						`/${locale}/services`,
+						`/${locale}/contact`
+					],
+					[]
+				)
+			)
 		}
 	},
 	preprocess: vitePreprocess()

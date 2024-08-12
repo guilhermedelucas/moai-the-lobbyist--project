@@ -1,76 +1,46 @@
 <script>
-	import '../app.css';
 	import { onMount } from 'svelte';
-	import { page } from '$app/stores';
+	import { goto } from '$app/navigation';
 	import { base } from '$app/paths';
-	import Nav from '../components/nav.svelte';
-	import Footer from '../components/footer.svelte';
-	import Banner from '../components/banner.svelte';
+	import { setLocale } from '$lib/translations';
+	import { page } from '$app/stores';
 
-	let currentPage = 'home';
-	let bannerTitle = 'Welcome to Law Consulting';
-	let bannerDescription = null;
-	let bannerImgSrc = `${base}/business.jpg`;
-	let bannerLink = null;
-	let bannerLinkText = null;
+	onMount(async () => {
+		const validLocales = ['en', 'pt', 'zh']; // Define your supported locales
+		const pathname = window.location.pathname;
 
-	$: {
-		const path = $page.url.pathname;
+		// If the user is on the root path, handle locale redirection
+		if (pathname === '/') {
+			let userLang = localStorage.getItem('preferred-lang') || navigator.language || 'en';
+			let langCode = userLang.split('-')[0];
 
-		if (path === `${base}/`) {
-			currentPage = 'home';
-			bannerTitle = 'Welcome to Law Consulting';
-			bannerImgSrc = `${base}/business.jpg`;
-			bannerDescription = 'Law Consulting is a law firm that offers legal services to its clients.';
-			bannerLink = `${base}/sobre`;
-			bannerLinkText = 'Saiba mais...';
-		} else if (path.startsWith(`${base}/sobre`)) {
-			currentPage = 'sobre';
-			bannerTitle = 'Sobre a EXREG Consultoria';
-			bannerImgSrc = `${base}/business.jpg`;
-			bannerLink = null;
-			bannerDescription = 'Excelência em soluções customizadas e eficazes para o seu negócio';
-		} else if (path.startsWith(`${base}/services`)) {
-			currentPage = 'services';
-			bannerTitle = 'Our Services';
-			bannerImgSrc = `${base}/business.jpg`;
-			bannerLink = null;
-			bannerDescription = null;
-		} else if (path.startsWith(`${base}/contact`)) {
-			currentPage = 'contact';
-			bannerTitle = 'Contact Us';
-			bannerImgSrc = `${base}/business.jpg`;
-			bannerLink = null;
-			bannerDescription = null;
+			if (!validLocales.includes(langCode)) {
+				langCode = 'pt'; // Default to 'pt' if the language is not supported
+			}
+
+			goto(`${base}/${langCode}`);
+			return;
 		}
-	}
+
+		// Check if the pathname starts with a valid locale
+		const pathSegments = pathname.split('/').filter(Boolean);
+		const pathLocale = pathSegments[0];
+
+		if (!validLocales.includes(pathLocale)) {
+			let userLang = localStorage.getItem('preferred-lang') || navigator.language || 'pt';
+			let langCode = userLang.split('-')[0];
+
+			if (!validLocales.includes(langCode)) {
+				langCode = 'pt'; // Default to 'pt' if the language is not supported
+			}
+
+			const newPath = `${base}/${langCode}`;
+			goto(newPath);
+		}
+
+		const lang = $page.params.lang || 'pt'; // Default to 'pt' if no language is set
+		await setLocale(lang); // Set the current language
+	});
 </script>
 
-<svelte:head>
-	<title>Law Consulting Services - Regulatory Compliance, Legal Consultation</title>
-	<meta
-		name="description"
-		content="Moai Expert law consulting services including regulatory compliance, legal consultation, contract review, risk management, and litigation support."
-	/>
-	<meta
-		name="keywords"
-		content="law consulting, regulatory compliance, legal consultation, contract review, risk management, litigation support"
-	/>
-</svelte:head>
-
-<div class="flex flex-col min-h-screen font-merriweather text-gray-800">
-	<Nav {currentPage} />
-	<Banner
-		description={bannerDescription}
-		title={bannerTitle}
-		imgSrc={bannerImgSrc}
-		linkText={bannerLinkText}
-		link={bannerLink}
-	/>
-
-	<main class="flex-grow">
-		<slot />
-	</main>
-
-	<Footer />
-</div>
+<slot />
